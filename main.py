@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 import os
 
-def _max_width_(visibility=None):
+def _max_width_():
     max_width_str = f"max-width: 1800px;"
     hide_streamlit_style = """
                 <style>
