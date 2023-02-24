@@ -72,5 +72,5 @@ if submitted:
 c29, c30, c31 = st.columns([1, 1, 2])
 
 with c29:
-
-  st.write(answer_)
+  st.write("Your answer will be appear here!")
+  st.text_area(answer_)
