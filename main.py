@@ -20,8 +20,12 @@ def _max_width_():
 st.set_page_config(page_icon="✂️", page_title="Question to Image")
 
 
-openai_key = st.sidebar.text_area("Enter your OpenAI key")
-st.write(openai_key)
+openai.api_key = st.sidebar.text_input(
+    "Enter your HuggingFace API key",
+    help="Once you created you HuggingFace account, you can get your free API token in your settings page: https://huggingface.co/settings/tokens",
+    type="password",
+)
+
 
 c2, c3 = st.columns([6, 1])
 
