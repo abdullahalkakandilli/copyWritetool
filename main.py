@@ -7,9 +7,13 @@ import os
 
 def _max_width_(visibility=None):
     max_width_str = f"max-width: 1800px;"
-    hide_footer_style = ""
-    st.markdown(
-        f"""
+    hide_streamlit_style = """
+                <style>
+                #MainMenu {visibility: hidden;}
+                footer {visibility: hidden;}
+                </style>
+                """
+    ananly =         f"""
     <style>
     .reportview-container .main footer {visibility: hidden;}  
     .reportview-container .main .block-container{{
@@ -17,8 +21,8 @@ def _max_width_(visibility=None):
     }}
     
     </style>    
-    """,
-        unsafe_allow_html=True,
+    """
+    st.markdown(hide_streamlit_style, ananly,  unsafe_allow_html=True,
     )
 
 
