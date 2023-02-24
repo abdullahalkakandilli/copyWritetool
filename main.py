@@ -17,7 +17,7 @@ def _max_width_():
     )
 
 
-st.set_page_config(page_icon="images/icon.png", page_title="Copywriter Tool")
+#st.set_page_config(page_icon="images/icon.png", page_title="Copywriter Tool")
 
 
 openai.api_key = st.sidebar.text_input(
