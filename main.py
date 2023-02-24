@@ -1,6 +1,9 @@
 import openai
 import pandas as pd
 import streamlit as st
+from dotenv import load_dotenv
+load_dotenv()
+import os
 
 def _max_width_():
     max_width_str = f"max-width: 1800px;"
@@ -15,8 +18,11 @@ def _max_width_():
         unsafe_allow_html=True,
     )
 
-st.set_page_config(page_icon="✂️", page_title="Question to Image")
+openai_key = st.sidebar.text_area("Enter your OpenAI key")
+st.write(openai_key)
 
+st.set_page_config(page_icon="✂️", page_title="Question to Image")
+openai.api_key = os.getenv(openai_key)  # os.getenv
 
 c2, c3 = st.columns([6, 1])
 
@@ -35,8 +41,7 @@ with c2:
 # Convert PDF to JPG
 
 def copyWriter(question_):
-  openai.api_key = "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"
-  # os.getenv
+
   response = openai.Completion.create(
     model="text-davinci-003",
     prompt=question_,
