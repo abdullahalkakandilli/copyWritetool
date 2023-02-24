@@ -15,7 +15,7 @@ def _max_width_():
     }}
     </style>    
     """,
-        unsafe_allow_html=True,
+        unsafe_allow_html=False,
     )
 st.set_page_config(page_icon="images/icon.png", page_title="Copywriter Tool")
 
