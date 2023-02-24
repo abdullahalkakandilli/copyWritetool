@@ -17,7 +17,7 @@ def _max_width_():
     """,
         unsafe_allow_html=True,
     )
-st.set_page_config(page_icon="✂️", page_title="Question to Image")
+st.set_page_config(page_icon="images/logo.png", page_title="Copywriter Tool")
 
 
 openai.api_key = st.sidebar.text_input(
@@ -67,4 +67,5 @@ answer_ = pd.DataFrame()
 if submitted:
 
     answer_ = copyWriter(question_)
+    st.write("Your answer appear here!")
     st.write(answer_)
