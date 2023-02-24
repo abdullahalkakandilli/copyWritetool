@@ -33,7 +33,7 @@ with c2:
     c31, c32 = st.columns([12, 2])
     with c31:
         st.caption("")
-        st.title("Question")
+        st.title("Copywriter Tool")
     with c32:
         st.image(
             "images/logo.png",
