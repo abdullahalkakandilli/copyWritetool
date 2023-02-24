@@ -22,10 +22,8 @@ openai_key = st.sidebar.text_area("Enter your OpenAI key")
 st.write(openai_key)
 
 st.set_page_config(page_icon="✂️", page_title="Question to Image")
-openai.api_key = os.getenv(openai_key)  # os.getenv
 
 c2, c3 = st.columns([6, 1])
-
 
 with c2:
     c31, c32 = st.columns([12, 2])
@@ -52,8 +50,6 @@ def copyWriter(question_):
     presence_penalty=0.0
   )
   result = response.choices[0].text
-
-
 
   return (result)
 
