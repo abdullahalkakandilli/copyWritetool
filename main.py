@@ -21,8 +21,8 @@ st.set_page_config(page_icon="✂️", page_title="Question to Image")
 
 
 openai.api_key = st.sidebar.text_input(
-    "Enter your HuggingFace API key",
-    help="Once you created you HuggingFace account, you can get your free API token in your settings page: https://huggingface.co/settings/tokens",
+    "Enter your OpenAI API key",
+    help="Once you created you OpenAI account, you can get your free API token in your settings page: https://platform.openai.com/account/api-keys",
     type="password",
 )
 
@@ -68,4 +68,7 @@ if submitted:
 
     answer_ = copyWriter(question_)
 
-st.write("Your answer will be appear here! /n" + answer_)
+if answer_.isna:
+    st.write("Your answer will be appear here!")
+else:
+    st.write(answer_)
