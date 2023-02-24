@@ -5,16 +5,15 @@ from dotenv import load_dotenv
 load_dotenv()
 import os
 
-def _max_width_():
-    max_width_str = f"max-width: 1800px;"
-    hide_streamlit_style = """
-                <style>
-                #MainMenu {visibility: hidden;}
-                footer {visibility: hidden;}
-                </style>
-                """
-    st.markdown(hide_streamlit_style,  unsafe_allow_html=True,
-    )
+max_width_str = f"max-width: 1800px;"
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style,  unsafe_allow_html=True,
+)
 
 
 #st.set_page_config(page_icon="images/icon.png", page_title="Copywriter Tool")
