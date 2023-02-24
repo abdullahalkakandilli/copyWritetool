@@ -68,9 +68,6 @@ if submitted:
 
     answer_ = copyWriter(question_)
 
+st.write("Your answer will be appear here!")
 
-c29, c30, c31 = st.columns([1, 1, 2])
-
-with c29:
-  st.write("Your answer will be appear here!")
-  st.text_area(answer_)
+st.write(answer_)
