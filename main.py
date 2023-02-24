@@ -5,26 +5,14 @@ from dotenv import load_dotenv
 load_dotenv()
 import os
 
-def _max_width_():
-    max_width_str = f"max-width: 1800px;"
-    st.markdown(
-        f"""
-    <style>
-    .reportview-container .main .block-container{{
-        {max_width_str}
-    }}
-    
-    </style>    
-    """,
-        unsafe_allow_html=True,
-    )
+
 hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
             </style>
             """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+st.markdown(hide_streamlit_style)
 
 st.set_page_config(page_icon="images/icon.png", page_title="Copywriter Tool")
 
