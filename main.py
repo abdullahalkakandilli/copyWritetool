@@ -68,7 +68,7 @@ if submitted:
 
     answer_ = copyWriter(question_)
 
-if answer_.isna:
+if answer_ =="":
     st.write("Your answer will be appear here!")
 else:
     st.write(answer_)
