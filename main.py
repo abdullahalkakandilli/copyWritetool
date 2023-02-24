@@ -5,11 +5,13 @@ from dotenv import load_dotenv
 load_dotenv()
 import os
 
-def _max_width_():
+def _max_width_(visibility=None):
     max_width_str = f"max-width: 1800px;"
+    hide_footer_style = ""
     st.markdown(
         f"""
     <style>
+    .reportview-container .main footer {visibility: hidden;}  
     .reportview-container .main .block-container{{
         {max_width_str}
     }}
