@@ -17,11 +17,11 @@ def _max_width_():
     """,
         unsafe_allow_html=True,
     )
+st.set_page_config(page_icon="✂️", page_title="Question to Image")
+
 
 openai_key = st.sidebar.text_area("Enter your OpenAI key")
 st.write(openai_key)
-
-st.set_page_config(page_icon="✂️", page_title="Question to Image")
 
 c2, c3 = st.columns([6, 1])
 
