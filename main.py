@@ -13,16 +13,7 @@ def _max_width_(visibility=None):
                 footer {visibility: hidden;}
                 </style>
                 """
-    ananly =         f"""
-    <style>
-    .reportview-container .main footer {visibility: hidden;}  
-    .reportview-container .main .block-container{{
-        {max_width_str}
-    }}
-    
-    </style>    
-    """
-    st.markdown(hide_streamlit_style, ananly,  unsafe_allow_html=True,
+    st.markdown(hide_streamlit_style,  unsafe_allow_html=True,
     )
 
 
