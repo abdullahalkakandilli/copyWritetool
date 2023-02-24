@@ -13,10 +13,19 @@ def _max_width_():
     .reportview-container .main .block-container{{
         {max_width_str}
     }}
+    
     </style>    
     """,
-        unsafe_allow_html=False,
+        unsafe_allow_html=True,
     )
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 st.set_page_config(page_icon="images/icon.png", page_title="Copywriter Tool")
 
 
