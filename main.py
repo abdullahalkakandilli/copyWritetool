@@ -68,4 +68,4 @@ if submitted:
 
     answer_ = copyWriter(question_)
 
-st.write("Your answer will be appear here! \n" + answer_)
+st.write("Your answer will be appear here! /n" + answer_)
