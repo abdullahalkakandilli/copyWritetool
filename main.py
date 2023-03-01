@@ -3,6 +3,7 @@ import pandas as pd
 import streamlit as st
 from dotenv import load_dotenv
 load_dotenv()
+from jose import jwt
 import os
 
 def _max_width_():
@@ -23,13 +24,12 @@ def _max_width_():
 st.set_page_config(page_icon="images/icon.png", page_title="Copywriter Tool")
 
 
-openai.api_key = st.sidebar.text_input(
-    "Enter your OpenAI API key",
-    help="Once you created you OpenAI account, you can get your free API token in your settings page: https://platform.openai.com/account/api-keys",
-    type="password",
-)
+openai.api_key = os.getenv('OPEN_API_KEY')
 
-token = st.experimental_get_query_params()['token']
+token = st.experimental_get_query_params()['token'][0]
+payload = jwt.decode(token, key=os.getenv('JWT_SECRET')., options={"verify_signature": True,
+                                                                    "verify_aud": False,
+                                                                    "verify_iss": False})
 st.write(token)
 c2, c3 = st.columns([6, 1])
 
