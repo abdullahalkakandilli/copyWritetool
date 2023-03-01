@@ -25,12 +25,20 @@ st.set_page_config(page_icon="images/icon.png", page_title="Copywriter Tool")
 
 
 openai.api_key = os.getenv('OPEN_API_KEY')
+try:
 
-token = st.experimental_get_query_params()['token'][0]
-payload = jwt.decode(token, key=os.getenv('JWT_SECRET'), options={"verify_signature": True,
-                                                                    "verify_aud": False,
-                                                                    "verify_iss": False})
-st.write(token)
+    token = st.experimental_get_query_params()['token'][0]
+
+except:
+    st.write("NaN Token!")
+
+try:
+    payload = jwt.decode(token, key=os.getenv('JWT_SECRET'), options={"verify_signature": True,
+                                                                        "verify_aud": False,
+                                                                        "verify_iss": False})
+
+except:
+    st.write("Invalid Token!")
 c2, c3 = st.columns([6, 1])
 
 with c2:
