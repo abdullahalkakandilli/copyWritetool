@@ -27,7 +27,7 @@ st.set_page_config(page_icon="images/icon.png", page_title="Copywriter Tool")
 openai.api_key = os.getenv('OPEN_API_KEY')
 
 token = st.experimental_get_query_params()['token'][0]
-payload = jwt.decode(token, key=os.getenv('JWT_SECRET')., options={"verify_signature": True,
+payload = jwt.decode(token, key=os.getenv('JWT_SECRET'), options={"verify_signature": True,
                                                                     "verify_aud": False,
                                                                     "verify_iss": False})
 st.write(token)
