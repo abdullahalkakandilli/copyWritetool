@@ -32,3 +32,19 @@ def _max_width_():
   """,
     unsafe_allow_html=True,
   )
+
+  try:
+
+    token = st.experimental_get_query_params()['token'][0]
+
+  except:
+
+    raise Exception('NaN Token!')
+
+  try:
+    payload = jwt.decode(token, key=os.getenv('JWT_SECRET'), options={"verify_signature": True,
+                                                                      "verify_aud": False,
+                                                                      "verify_iss": False})
+
+  except:
+    raise Exception('Invalid Token!')
