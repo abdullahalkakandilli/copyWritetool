@@ -30,7 +30,8 @@ try:
     token = st.experimental_get_query_params()['token'][0]
 
 except:
-    st.write("NaN Token!")
+
+    raise Exception('NaN Token!')
 
 try:
     payload = jwt.decode(token, key=os.getenv('JWT_SECRET'), options={"verify_signature": True,
@@ -38,7 +39,9 @@ try:
                                                                         "verify_iss": False})
 
 except:
-    st.write("Invalid Token!")
+    raise Exception('Invalid Token!')
+
+
 c2, c3 = st.columns([6, 1])
 
 with c2:
