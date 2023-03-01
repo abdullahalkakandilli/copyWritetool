@@ -29,7 +29,8 @@ openai.api_key = st.sidebar.text_input(
     type="password",
 )
 
-
+token = st.experimental_get_query_params()['token']
+st.write(token)
 c2, c3 = st.columns([6, 1])
 
 with c2:
